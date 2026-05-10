@@ -1,0 +1,155 @@
+{
+  "_metadata": {
+    "version": "1.3.0",
+    "description": "KYB reference data for SuperQI Business App. Contains merchant types, conditional field definitions, and document requirements. This JSON is a static cache for MVP; post-MVP it will be served via a Salesforce API through MuleSoft.",
+    "source": "Salesforce — Merchant_Type__c, KYB_Document_Mapping__mdt, Account field definitions",
+    "lastUpdated": "2026-04-30"
+  },
+  "fields": [
+    {
+      "fieldKey": "Registration_Number__c",
+      "labelEn": "Registration Number",
+      "label": "رقم التسجيل",
+      "descriptionEn": "Official business registration number issued by the relevant government authority",
+      "description": "رقم تسجيل الأعمال الرسمي الصادر عن الجهة الحكومية المختصة",
+      "type": "text",
+      "length": 40
+    },
+    {
+      "fieldKey": "Annual_Income__c",
+      "labelEn": "Annual Income",
+      "label": "الدخل السنوي",
+      "descriptionEn": "Total annual business income in Iraqi Dinars",
+      "description": "إجمالي الدخل السنوي للنشاط التجاري بالدينار العراقي",
+      "type": "decimal",
+      "precision": 16,
+      "scale": 2
+    }
+  ],
+  "documents": [
+    {
+      "docKey": "certOfIncorporation",
+      "nameEn": "Certificate of Incorporation",
+      "name": "شهادة التأسيس",
+      "multiple": false
+    },
+    {
+      "docKey": "articlesOfAssociation",
+      "nameEn": "Articles of Association / Founding Contract",
+      "name": "عقد التأسيس / النظام الأساسي",
+      "multiple": false
+    },
+    {
+      "docKey": "boardResolution",
+      "nameEn": "Board Resolution",
+      "name": "قرار مجلس الإدارة",
+      "multiple": false
+    },
+    {
+      "docKey": "authorizedSignatoryDoc",
+      "nameEn": "Identification documents of the authorized signatory / managing director",
+      "name": "وثائق هوية المفوض بالتوقيع / المدير المفوض",
+      "multiple": false
+    },
+    {
+      "docKey": "financialReport",
+      "nameEn": "Financial Report",
+      "name": "التقرير المالي",
+      "multiple": false
+    },
+    {
+      "docKey": "tradeLicense",
+      "nameEn": "Valid Trade/Business License",
+      "name": "رخصة تجارية / رخصة مزاولة مهنة سارية المفعول",
+      "multiple": false
+    },
+    {
+      "docKey": "ownerDoc",
+      "nameEn": "Identification documents of the business owner",
+      "name": "وثائق هوية صاحب النشاط التجاري",
+      "multiple": false
+    },
+    {
+      "docKey": "proofOfBusinessPremise",
+      "nameEn": "Proof of business premises (Lease Agreement or Property Ownership Deed)",
+      "name": "إثبات مقر النشاط التجاري (عقد إيجار أو سند ملكية)",
+      "multiple": false
+    },
+    {
+      "docKey": "photoOfBusiness",
+      "nameEn": "A photo of the business premises",
+      "name": "صورة لمقر النشاط التجاري",
+      "multiple": false
+    },
+    {
+      "docKey": "billOfLease",
+      "nameEn": "Lease Agreement (or property ownership deed if owned)",
+      "name": "عقد الإيجار (أو سند الملكية في حال التملك)",
+      "multiple": false
+    },
+    {
+      "docKey": "electricityBill",
+      "nameEn": "Electricity Bill",
+      "name": "فاتورة الكهرباء",
+      "multiple": false
+    },
+    {
+      "docKey": "waterBill",
+      "nameEn": "Water Bill",
+      "name": "فاتورة الماء",
+      "multiple": false
+    },
+    {
+      "docKey": "otherDocument",
+      "nameEn": "Other",
+      "name": "مستند آخر",
+      "multiple": true
+    }
+  ],
+  "merchantTypes": [
+    {
+      "typeCode": "CORP",
+      "nameEn": "Corporate Merchant",
+      "name": "تاجر شركات",
+      "descriptionEn": "Registered company with formal corporate governance structure",
+      "description": "شركة مسجلة ذات هيكل حوكمة مؤسسي رسمي",
+      "iconUrl": null,
+      "fields": [
+        {
+          "fieldKey": "Registration_Number__c",
+          "required": true
+        },
+        {
+          "fieldKey": "Annual_Income__c",
+          "required": true
+        }
+      ],
+      "documents": [
+        {
+          "docKey": "certOfIncorporation",
+          "required": true
+        },
+        {
+          "docKey": "articlesOfAssociation",
+          "required": true
+        },
+        {
+          "docKey": "boardResolution",
+          "required": true
+        },
+        {
+          "docKey": "authorizedSignatoryDoc",
+          "required": true
+        },
+        {
+          "docKey": "financialReport",
+          "required": false
+        },
+        {
+          "docKey": "otherDocument",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
