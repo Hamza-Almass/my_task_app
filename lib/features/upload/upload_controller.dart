@@ -35,6 +35,7 @@ class UploadController extends ChangeNotifier {
        allowMultiple: item.multiple));
     });
 
+
     model.fields.forEach((field) {
       final item = model.fields.firstWhere(
         (element) => element.fieldKey == field.fieldKey,
